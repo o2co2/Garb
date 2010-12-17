@@ -1,0 +1,67 @@
+以下是一个 demo 代码：
+
+
+package
+{
+ import com.riaoo.events.KeyComboEvent;
+ import com.riaoo.ui.Key;
+ import com.riaoo.ui.KeyCombo;
+
+ import flash.display.Sprite;
+ import flash.events.Event;
+
+ public class Main extends Sprite
+ {
+  private var key:Key;
+  private var keyCombo1:KeyCombo;
+  private var keyCombo2:KeyCombo;
+
+  public function Main()
+  {
+   addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+  }
+
+  private function onAddedToStage(event:Event):void
+  {
+   removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+
+   this.key = new Key(this.stage, 200); // 按键之间的时间限制为 100 毫秒
+   this.key.addEventListener(KeyComboEvent.SEQUENCE, onSequence);
+   this.key.addEventListener(KeyComboEvent.DOWN, onDown);
+   this.key.addEventListener(KeyComboEvent.RELEASE, onRelease);
+
+   this.keyCombo1 = new KeyCombo(68, 70, 74); // 连招。键值代码为 D:68, F:70, J:74
+   this.keyCombo2 = new KeyCombo(74, 75); // J:74, K:75
+   this.key.addKeyCombo(this.keyCombo1); // 添加组合键到 key 对象
+   this.key.addKeyCombo(this.keyCombo2);
+  }
+
+  // 连招。
+  private function onSequence(event:KeyComboEvent):void
+  {
+   if (event.keyCombo.equals(this.keyCombo1))
+   {
+    trace("我发了一个连招");
+   }
+  }
+
+  // 同时按住组合键。
+  private function onDown(event:KeyComboEvent):void
+  {
+   if (event.keyCombo.equals(this.keyCombo2))
+   {
+    trace("我同时按住 J 和 K");
+   }
+  }
+
+  // 松开组合键。
+  private function onRelease(event:KeyComboEvent):void
+  {
+   if (event.keyCombo.equals(this.keyCombo2))
+   {
+    trace("我放开了组合键 J 和 K");
+   }
+  }
+
+ }
+}

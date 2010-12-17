@@ -1,0 +1,39 @@
+package {
+					
+	import flash.events.Event;
+					
+	import org.casalib.display.CasaMovieClip;
+					
+	import org.casalib.time.EnterFrame;
+					
+					
+					
+public class MyExample extends CasaMovieClip {
+						
+	
+	protected var _pulseInstance:EnterFrame;
+						
+						
+						
+	public function MyExample() {
+							
+		super();
+							
+							
+		this._pulseInstance = EnterFrame.getInstance();
+		
+					
+		this._pulseInstance.addEventListener(Event.ENTER_FRAME, this._onFrameFire);
+						
+	}
+						
+						
+	protected function _onFrameFire(e:Event):void {
+								
+		trace("I will be called every frame.");
+						
+		}
+					
+	}
+				
+}

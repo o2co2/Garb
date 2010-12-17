@@ -1,0 +1,46 @@
+GContextMenu(hideBuiltInItems:Boolean = true) 
+
+    addMenu(label:String, handler:Function = null):void
+增加一个菜单  
+
+    addSeparator():void
+增加一个分隔线  
+
+    addURLMenu(label:String, url:String):void
+增加一个链接 
+
+    getMenuByName(label:String):ContextMenuItem
+根据名字获得菜单  
+
+    parse(target:InteractiveObject):void
+应用  
+
+使用实例
+
+package 
+{
+	import flash.display.Sprite;
+	
+	import com.flasham.other.GContextMenu;
+	
+	/**
+	 * ...
+	 * @author 张文敏
+	 */
+	public class main extends Sprite 
+	{
+		public var menu:GContextMenu = new GContextMenu();
+		
+		public function main()
+		{
+			menu.addMenu("我的菜单", menu1);
+			menu.parse(pp_mc);
+		}
+		
+		private function menu1():void
+		{
+			trace("点击了菜单");
+		}
+	}
+	
+}

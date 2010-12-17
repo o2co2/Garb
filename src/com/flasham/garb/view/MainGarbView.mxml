@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:view="com.flasham.garb.view.components.*"
+		 xmlns:view1="com.flasham.garb.view.*"
+		 width="900" height="600"
+		 skinClass="com.flasham.garb.view.components.skins.MainSkin">
+	<s:layout>
+		<s:BasicLayout />
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import com.flasham.garb.view.components.skins.MainSkin;
+			
+			import spark.components.WindowedApplication;
+			
+			public var _root:WindowedApplication;
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Group x="0" y="0" width="100%" height="100%">
+		<view:ProgressBarView />
+	</s:Group>
+	<s:Group x="0" y="0" width="100%" height="100%">
+		<s:layout>
+			<s:VerticalLayout/>
+		</s:layout>
+		
+		<view:OneTopView id="oneTopView" width="100%" height="140" />
+		<s:Group id="middle" width="100%" height="100%">
+			<s:layout>
+				<s:HorizontalLayout  gap="0" verticalAlign="top" paddingRight="1"/>
+			</s:layout>
+			<view:OneMiddleLeftView width="710" height="100%"/>
+			<view:OneMiddleRightView width="100%" height="100%" />
+		</s:Group>
+		<s:Group width="100%" height="61" />
+	</s:Group>
+
+</s:SkinnableContainer>

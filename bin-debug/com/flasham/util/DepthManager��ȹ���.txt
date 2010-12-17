@@ -1,0 +1,20 @@
+// canvasの深度管理を初期化（配置済みの子については0から順に深度が割り振られる）
+var manager:DepthManager= new DepthManager( canvas );
+
+// 最前面に追加（深度は直前の最大深度+1が割り振られる）
+manager.addChild( child );
+
+// 指定深度に追加（その深度にすでに子が配置されている場合は上書き）
+manager.addChildAt( child, 500 );
+
+// 指定深度に変更（その深度にすでに子が配置されている場合は交換）
+manager.setDepth( child, 100 );
+
+// 子を削除
+manager.removeChild( child );
+
+// 指定深度から子を削除
+manager.removeChildAt( child, 50 );
+
+// 深度交換
+manager.swapChildren( child1, child2 );

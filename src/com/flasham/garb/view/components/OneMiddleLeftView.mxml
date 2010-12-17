@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:middle="com.flasham.garb.view.components.middle.*"  
+		 width="710"  currentState="List">
+	<s:layout>
+		<s:BasicLayout />
+	</s:layout>
+	<s:states>
+		<s:State name="List" />
+		<s:State name="Html" />
+	</s:states>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Scroller includeIn="List" x="3" y="3" width="100%" height="388" >
+		<middle:ListLeftView  />
+	</s:Scroller>
+	<middle:HtmlLeftView id="htmlLeft" includeIn="Html" x="3" y="3" height="388" width="100%" />
+</s:Group>

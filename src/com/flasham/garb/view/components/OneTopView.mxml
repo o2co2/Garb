@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 >
+	<s:layout>
+		<s:BasicLayout />
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import com.flasham.garb.view.components.skins.FeedButtonSkin;
+			import com.flasham.garb.view.components.skins.MenuButtonSkin;
+			import com.flasham.garb.view.components.skins.SkinButtonSkin;
+			import com.flasham.garb.view.components.skins.MinButtonSkin;
+			import com.flasham.garb.view.components.skins.CloseButtonXSkin;
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:Button id="close_btn" name="close_btn"  x="870" y="88" skinClass="com.flasham.garb.view.components.skins.CloseButtonXSkin"/>
+	<s:Button id="min_btn"   name="min_btn"    x="850" y="88" skinClass="com.flasham.garb.view.components.skins.MinButtonSkin" />
+	<s:Button id="skin_btn"  name="skin_btn"   x="830" y="88" skinClass="com.flasham.garb.view.components.skins.SkinButtonSkin" />
+	<s:Button id="menu_btn"  name="menu_btn"   x="810" y="88" skinClass="com.flasham.garb.view.components.skins.MenuButtonSkin" />
+	<s:Button id="feed_btn"  name="feed_btn"   x="790" y="88" skinClass="com.flasham.garb.view.components.skins.FeedButtonSkin" />
+</s:Group>

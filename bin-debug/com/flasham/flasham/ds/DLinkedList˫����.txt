@@ -1,0 +1,46 @@
+﻿import com.flasham.ds.DListNode;
+import com.flasham.ds.DListIterator;
+import com.flasham.ds.DLinkedList;
+
+
+var  myList:DLinkedList=new DLinkedList();
+
+myList.append(0,1,2,3);
+
+var itr:DListIterator = new DListIterator(myList);
+itr.start()
+ //trace(itr.next());
+ 
+ movieClip_1.addEventListener(MouseEvent.CLICK, fl_MouseClickHandler);
+
+function fl_MouseClickHandler(event:MouseEvent):void
+{
+	// 开始您的自定义代码
+	// 此示例代码在"输出"面板中显示"已单击鼠标"。
+	trace(itr.next());
+	
+	// 结束您的自定义代码
+}
+
+
+循环双链表
+var  myList:DLinkedList=new DLinkedList(true);
+
+
+myList.append(0,1,2,3,4);
+
+var itr:DListIterator = new DListIterator(myList);
+itr.start()
+ //trace(itr.next());
+ 
+ movieClip_1.addEventListener(MouseEvent.CLICK, fl_MouseClickHandler);
+
+function fl_MouseClickHandler(event:MouseEvent):void
+{
+	// 开始您的自定义代码
+	// 此示例代码在"输出"面板中显示"已单击鼠标"。
+	//trace(itr.next());
+	trace(itr.up());
+	
+	// 结束您的自定义代码
+}
